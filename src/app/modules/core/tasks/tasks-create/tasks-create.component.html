@@ -1,0 +1,19 @@
+<form [formGroup]="tasksCreate" (ngSubmit)="onSubmit()">
+  <div>
+    <button mat-fab color="primary" type="submit" disabled={{!tasksCreate.valid}}>
+      <mat-icon>done</mat-icon>
+    </button>
+    <button mat-fab color="warn" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Task Name:</mat-label>
+    <input matInput type="text" formControlName="taskName" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Task Description:</mat-label>
+    <input matInput type="text" formControlName="taskDescription" />
+  </mat-form-field>
+</form>

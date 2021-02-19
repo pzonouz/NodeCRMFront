@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="toolbar">
+  <button mat-icon-button class="example-icon" (click)="sideNav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>NodeCRM</span>
+  <span class="example-spacer"></span>
+  <span>{{label}}</span>
+  <span class="example-spacer"></span>
+  <span>{{ userName }}</span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon">
+    <mat-icon>account_box</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item (click)="onLogout()">
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sideNav class="leftNav">
+    <mat-nav-list class="navList">
+      <a class="navItem" mat-list-item *ngFor="let item of navList" [routerLink]="item.path">
+        <mat-icon>{{ item.icon }}</mat-icon> {{ item.label }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="navContents">
+    <router-outlet (activate)="onLoad($event)"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
