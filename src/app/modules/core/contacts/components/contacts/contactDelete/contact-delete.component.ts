@@ -2,7 +2,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Component, OnInit, Inject } from '@angular/core';
 import { ContactsService } from '../contacts.service';
-import { Contact } from 'src/app/modules/shared/models/models.module';
+import { Contact } from 'src/app/modules/shared/models/modals.module';
 
 @Component({
   selector: 'app-contact-delete',

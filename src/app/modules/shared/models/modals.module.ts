@@ -9,6 +9,12 @@ export class Contact {
   phoneNumber: string;
   // image: String;
 }
+export class Task {
+  id: number;
+  name: string;
+  description: string;
+}
+
 
 @NgModule({
   declarations: [],

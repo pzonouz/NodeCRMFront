@@ -1,6 +1,6 @@
-<form [formGroup]="taskCreate" (ngSubmit)="onSubmit($event)">
+<form [formGroup]="taskEdit" (ngSubmit)="onSubmit($event)">
   <div>
-    <button mat-fab color="primary" type="submit" disabled="{{ !taskCreate.valid }}">
+    <button mat-fab color="primary" type="submit" disabled="{{ !taskEdit.valid }}">
       <mat-icon>done</mat-icon>
     </button>
     <button mat-fab color="warn" mat-dialog-close (click)="onCloseClick($event)">
@@ -12,13 +12,14 @@
     <input matInput type="text" formControlName="name" />
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </mat-form-field>
-  <app-form-validation-errors [control]="taskCreate.get('name')"></app-form-validation-errors>
+  <app-form-validation-errors [control]="taskEdit.get('name')"></app-form-validation-errors>
 
   <mat-form-field appearance="outline">
-    <mat-label>Task Description:</mat-label>
+    <mat-label>Description:</mat-label>
     <input matInput type="text" formControlName="description" />
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </mat-form-field>
-  <app-form-validation-errors [control]="taskCreate.get('description')"></app-form-validation-errors>
+  <app-form-validation-errors [control]="taskEdit.get('description')"></app-form-validation-errors>
+
 
 </form>

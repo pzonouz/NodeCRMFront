@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { ContactDeleteComponent } from './../contactDelete/contact-delete.component';
 import { ContactsMoreComponent } from '../contactsMore/contacts-more.component';
 import { ContactsEditComponent } from './../contactsEdit/contacts-edit.component';
-import { Contact } from './../../../../../shared/models/models.module';
+import { Contact } from '../../../../../shared/models/modals.module';
 import { Component, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactsService } from '../contacts.service';
@@ -19,12 +19,11 @@ export class ContactsComponent implements OnInit {
     public dialog: MatDialog,
     private contactsService: ContactsService,
     private router: Router
-  ) { }
+  ) {}
   //This is for label on top of  navigation bar
-  label: string = "Contacts"
+  label: string = 'Contacts';
   contacts: Contact[] = [];
   ngOnInit(): void {
-    localStorage.setItem("label", "contacts");
     this.contactsService.getContacts().subscribe(
       (result: Contact[]) => {
         if (result.length !== 0) {

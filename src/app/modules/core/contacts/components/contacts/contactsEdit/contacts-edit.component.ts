@@ -1,9 +1,9 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ContactsService } from './../contacts.service';
-import { Contact } from '../../../../../shared/models/models.module';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Contact } from 'src/app/modules/shared/models/modals.module';
 
 @Component({
   selector: 'app-contacts-edit',

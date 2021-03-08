@@ -1,5 +1,5 @@
 import { FormControl, FormGroup } from '@angular/forms';
-import { Contact } from '../../../../../shared/models/models.module';
+import { Contact } from '../../../../../shared/models/modals.module';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Component, OnInit, Inject, Input } from '@angular/core';
 

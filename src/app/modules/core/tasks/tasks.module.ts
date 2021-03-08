@@ -4,17 +4,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TasksRoutingModule } from './tasks-routing.module';
+import { TasksService } from './tasks.service';
 import { TasksComponent } from './tasks/tasks.component';
 import { TasksCreateComponent } from './tasks-create/tasks-create.component';
-
-export class Task {
-  id: number;
-  name: string;
-}
+import { TasksDeleteComponent } from './tasks-delete/tasks-delete.component';
+import { TasksEditComponent } from './tasks-edit/tasks-edit.component';
+import { TasksMoreComponent } from './tasksMore/tasks-more.component';
 
 @NgModule({
   imports: [CommonModule, TasksRoutingModule, MaterialModule, SharedModule],
-  declarations: [TasksCreateComponent, TasksComponent],
-
+  declarations: [
+    TasksDeleteComponent,
+    TasksComponent,
+    TasksCreateComponent,
+    TasksEditComponent,
+    TasksMoreComponent,
+  ],
+  providers: [],
 })
-export class TasksModule { }
+export class TasksModule {}
