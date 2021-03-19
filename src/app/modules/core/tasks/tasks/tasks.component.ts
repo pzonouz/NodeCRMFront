@@ -3,9 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Constants } from 'src/app/modules/shared/constants';
 import { Task } from 'src/app/modules/shared/models/modals.module';
-import { TasksCreateComponent } from '../tasks-create/tasks-create.component';
-import { TasksDeleteComponent } from '../tasks-delete/tasks-delete.component';
-import { TasksEditComponent } from '../tasks-edit/tasks-edit.component';
+import { TasksCreateComponent } from '../tasksCreate/tasks-create.component';
+import { TasksDeleteComponent } from '../tasksDelete/tasks-delete.component';
+import { TasksEditComponent } from '../tasksEdit/tasks-edit.component';
 import { TasksService } from '../tasks.service';
 import { TasksMoreComponent } from '../tasksMore/tasks-more.component';
 

@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
-  AuthrizationHeader: string;
+  AuthorizationHeader: string;
   constructor(private httpClient: HttpClient) {
-    this.AuthrizationHeader = `Bearer ${localStorage.getItem('access_token')}`;
+    this.AuthorizationHeader = `Bearer ${localStorage.getItem('access_token')}`;
   }
 
   login(username: string, password: string) {
@@ -18,9 +18,9 @@ export class AuthService {
     });
   }
   profile() {
-    console.log(this.AuthrizationHeader);
+    console.log(this.AuthorizationHeader);
     return this.httpClient.get(`${Constants.API_URL}/auth/profile`, {
-      headers: new HttpHeaders({ Authorization: this.AuthrizationHeader }),
+      headers: new HttpHeaders({ Authorization: this.AuthorizationHeader }),
     });
   }
 

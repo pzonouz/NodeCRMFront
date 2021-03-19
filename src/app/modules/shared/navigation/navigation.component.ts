@@ -15,9 +15,28 @@ export interface navItem {
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
+  constructor(private authService: AuthService, private router: Router) {
+    this.navList = [
+      {
+        label: 'Contacts',
+        path: '/contacts',
+        icon: 'contacts',
+      },
+      {
+        label: 'Tasks',
+        path: '/tasks',
+        icon: 'tasks',
+      },
+      {
+        label: 'Users',
+        path: '/users',
+        icon: 'supervisor_account',
+      },
+    ];
+  }
   userName: string;
-  constructor(private authService: AuthService, private router: Router) { }
-  label: string
+  navList: navItem[];
+  label: string;
   onLogout() {
     this.authService.logOut();
     location.reload();
@@ -28,23 +47,6 @@ export class NavigationComponent implements OnInit {
     });
   }
   onLoad($event) {
-    this.label = $event.label
+    this.label = $event.label;
   }
-  navList: navItem[] = [
-    {
-      label: 'Contacts',
-      path: '/contacts',
-      icon: 'contacts',
-    },
-    {
-      label: 'Tasks',
-      path: '/tasks',
-      icon: 'tasks',
-    },
-    {
-      label: 'Users',
-      path: '/users',
-      icon: 'supervisor_account',
-    },
-  ];
 }

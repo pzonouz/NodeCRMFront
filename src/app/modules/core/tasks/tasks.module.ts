@@ -4,11 +4,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TasksRoutingModule } from './tasks-routing.module';
-import { TasksService } from './tasks.service';
 import { TasksComponent } from './tasks/tasks.component';
-import { TasksCreateComponent } from './tasks-create/tasks-create.component';
-import { TasksDeleteComponent } from './tasks-delete/tasks-delete.component';
-import { TasksEditComponent } from './tasks-edit/tasks-edit.component';
+import { TasksCreateComponent } from './tasksCreate/tasks-create.component';
+import { TasksDeleteComponent } from './tasksDelete/tasks-delete.component';
+import { TasksEditComponent } from './tasksEdit/tasks-edit.component';
 import { TasksMoreComponent } from './tasksMore/tasks-more.component';
 
 @NgModule({

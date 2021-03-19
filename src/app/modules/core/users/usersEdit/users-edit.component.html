@@ -1,0 +1,40 @@
+<form [formGroup]="userEdit" *ngIf="!passwordEnable" (ngSubmit)="onSubmit($event)">
+  <div>
+    <button mat-fab color="primary" type="submit" disabled="{{ !userEdit.valid }}">
+      <mat-icon>done</mat-icon>
+    </button>
+    <button mat-fab color="warn" mat-dialog-close (click)="onCloseClick($event)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+    <input matInput type="text" formControlName="username" />
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <app-form-validation-errors [control]="userEdit.get('username')"></app-form-validation-errors>
+</form>
+<button color="primary" mat-raised-button *ngIf="!passwordEnable" (click)="onPasswordVisibleToggle()">Change
+  Password</button>
+
+
+<form [formGroup]="passwordSet" [hidden]="!passwordEnable" (ngSubmit)="onPasswordSubmit($event)">
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" />
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <app-form-validation-errors [control]="passwordSet.get('password')"></app-form-validation-errors>
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="confirmPassword" />
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </mat-form-field>
+  <app-form-validation-errors [control]="passwordSet.get('confirmPassword')"></app-form-validation-errors>
+  <mat-error *ngIf="!(passwordSet.value.password === passwordSet.value.confirmPassword)">Passwords doesn't match
+  </mat-error>
+  <button color="warn" mat-raised-button type="submit"
+    disabled="{{ !passwordSet.valid || !(passwordSet.value.password === passwordSet.value.confirmPassword)}}">
+    Change Password
+  </button>
+</form>

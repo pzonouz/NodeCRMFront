@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       .login(this.loginGroup.value.username, this.loginGroup.value.password)
       .subscribe(
         (result: Result) => {
+          localStorage.setItem('role', 'admin');
           localStorage.setItem('access_token', result.access_token);
           this.router.navigate(['/']);
         },

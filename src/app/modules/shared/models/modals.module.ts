@@ -15,6 +15,11 @@ export class Task {
   description: string;
 }
 
+export class User {
+  id: number;
+  username: string;
+  password: string;
+}
 
 @NgModule({
   declarations: [],
