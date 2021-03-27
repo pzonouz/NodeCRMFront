@@ -1,4 +1,4 @@
 export const Constants = {
-  API_URL: 'http://192.168.1.100:3000',
+  API_URL: 'https://afternoon-hamlet-70087.herokuapp.com',
   dialog_Height: '580px',
 };
